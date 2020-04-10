@@ -4,8 +4,8 @@ const data = {
     region: {
     name: "Africa",
     avgAge: 19.7,
-    avgDailyIncomeInUSD: 5,
-    avgDailyIncomePopulation: 0.71
+    avgDailyIncomeInUSD: 4,
+    avgDailyIncomePopulation: 0.73
     },
     periodType: "days",
     timeToElapse: 38,
@@ -20,13 +20,21 @@ const output = {
         currentlyInfected :27470 ,
         infectionsByRequestedTime :112517120 ,
         severeCasesByRequestedTime : 16877568,
-        hospitalBedsByRequestedTime : -16639962
+        hospitalBedsByRequestedTime : -16639962,
+        casesForICUByRequestedTime : 5625856,
+        casesForVentilatorsByRequestedTime : 2250342,
+        dollarsInFlight : Number(12484899635.20).toFixed(2)
+
     },
     severeImpact : {
         currentlyInfected : 137350,
         infectionsByRequestedTime : 562585600,
         severeCasesByRequestedTime : 84387840,
-        hospitalBedsByRequestedTime : -84150234
+        hospitalBedsByRequestedTime : -84150234,
+        casesForICUByRequestedTime : 28129280,
+        casesForVentilatorsByRequestedTime : 11251712,
+        dollarsInFlight : Number(62424498176.00).toFixed(2)
+
     }
 }   
 
