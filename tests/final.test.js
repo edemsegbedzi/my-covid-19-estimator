@@ -8,25 +8,25 @@ const data = {
     avgDailyIncomePopulation: 0.71
     },
     periodType: "days",
-    timeToElapse: 58,
-    reportedCases: 10,
-    population: 66622705,
-    totalHospitalBeds: 1380614
+    timeToElapse: 38,
+    reportedCases: 2747,
+    population: 92931687,
+    totalHospitalBeds: 678874
    };
 
 const output = {
     data,
     impact : {
-        currentlyInfected :100 ,
-        infectionsByRequestedTime :52428800 ,
-        severeCasesByRequestedTime : 7864320,
-        hospitalBedsByRequestedTime : -7381106
+        currentlyInfected :27470 ,
+        infectionsByRequestedTime :112517120 ,
+        severeCasesByRequestedTime : 16877568,
+        hospitalBedsByRequestedTime : -16639962
     },
     severeImpact : {
-        currentlyInfected : 500,
-        infectionsByRequestedTime : 262144000,
-        severeCasesByRequestedTime : 39321600,
-        hospitalBedsByRequestedTime : -38838386
+        currentlyInfected : 137350,
+        infectionsByRequestedTime : 562585600,
+        severeCasesByRequestedTime : 84387840,
+        hospitalBedsByRequestedTime : -84150234
     }
 }   
 
