@@ -21,12 +21,12 @@ export const calcFactor = (periodType, timeToElapse) => {
 };
 
 export const calcHospitalBeds = (totalHospitalBeds, severeCasesByRequestedTime) => {
-  const availableBeds = 0.35 * totalHospitalBeds;
+  const availableBeds = Math.floor(0.35 * totalHospitalBeds);
 
   if ((availableBeds - severeCasesByRequestedTime) >= 0) {
-    return Math.floor(availableBeds);
+    return availableBeds;
   }
-  return Math.floor(availableBeds - severeCasesByRequestedTime);
+  return availableBeds - severeCasesByRequestedTime;
 };
 
 const covid19ImpactEstimator = (data) => {
