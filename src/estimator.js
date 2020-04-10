@@ -5,7 +5,7 @@ export const calcSevereCurrentlyInfected = (reportedCases) => reportedCases * 50
 
 export const calcInfections = (currentlyInfected, factor) => currentlyInfected * factor;
 
-export const calcSevereCases = (infections) => 0.15 * infections;
+export const calcSevereCases = (infections) => Math.floor(0.15 * infections);
 
 export const calcFactor = (periodType, timeToElapse) => {
   switch (periodType) {
@@ -26,7 +26,7 @@ export const calcHospitalBeds = (totalHospitalBeds, severeCasesByRequestedTime) 
   if ((availableBeds - severeCasesByRequestedTime) >= 0) {
     return Math.floor(availableBeds);
   }
-  return Math.floor(availableBeds - severeCasesByRequestedTime + 1);
+  return Math.floor(availableBeds - severeCasesByRequestedTime);
 };
 
 const covid19ImpactEstimator = (data) => {
