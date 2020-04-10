@@ -20,13 +20,13 @@ const output = {
         currentlyInfected :100 ,
         infectionsByRequestedTime :52428800 ,
         severeCasesByRequestedTime : 7864320,
-        hospitalBedsByRequestedTime : -7381106
+        hospitalBedsByRequestedTime : -7381105
     },
     severeImpact : {
         currentlyInfected : 500,
         infectionsByRequestedTime : 262144000,
         severeCasesByRequestedTime : 39321600,
-        hospitalBedsByRequestedTime : -38838386
+        hospitalBedsByRequestedTime : -38838385
     }
 }   
 
