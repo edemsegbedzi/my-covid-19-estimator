@@ -26,7 +26,7 @@ export const calcHospitalBeds = (totalHospitalBeds, severeCasesByRequestedTime) 
   if ((availableBeds - severeCasesByRequestedTime) >= 0) {
     return Math.floor(availableBeds);
   }
-  return Math.floor(availableBeds - severeCasesByRequestedTime+1);
+  return Math.floor(availableBeds - severeCasesByRequestedTime + 1);
 };
 
 const covid19ImpactEstimator = (data) => {
