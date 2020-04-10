@@ -31,33 +31,3 @@ test("should return 4", () => {
 test("should return 1024", () => {
     expect(calcFactor("months",1)).toBe(1024)
 })
-
-const data = {
-    region: {
-    name: "Africa",
-    avgAge: 19.7,
-    avgDailyIncomeInUSD: 5,
-    avgDailyIncomePopulation: 0.71
-    },
-    periodType: "days",
-    timeToElapse: 58,
-    reportedCases: 10,
-    population: 66622705,
-    totalHospitalBeds: 1380614
-   };
-
-const output = {
-    data,
-    impact : {
-        currentlyInfected :100 ,
-        infectionsByRequestedTime :52428800 ,
-    },
-    severeImpact : {
-        currentlyInfected : 500,
-        infectionsByRequestedTime : 262144000,
-    }
-}   
-
-test("should return output", () => {
-    expect(covid19ImpactEstimator(data)).toEqual(output)
-})

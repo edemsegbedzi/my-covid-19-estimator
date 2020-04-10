@@ -5,6 +5,7 @@ export const calcSevereCurrentlyInfected = (reportedCases) => reportedCases * 50
 
 export const calcInfections = (currentlyInfected, factor) => currentlyInfected * factor;
 
+export const calcSevereCases = (infections) => Math.floor( 0.15 * infections);
 
 export const calcFactor = (periodType, timeToElapse) => {
   switch (periodType) {
@@ -19,20 +20,41 @@ export const calcFactor = (periodType, timeToElapse) => {
   }
 };
 
+export const calcHospitalBeds = (totalHospitalBeds, severeCasesByRequestedTime) => {
+  const availableBeds = Math.floor( 0.35 * totalHospitalBeds);
+
+  if ((availableBeds - severeCasesByRequestedTime) >= 0) {
+    return availableBeds;
+  }
+  return availableBeds - severeCasesByRequestedTime;
+};
+
 const covid19ImpactEstimator = (data) => {
   const currentlyInfected = calcCurrentlyInfected(data.reportedCases);
   const severeCurrentlyInfected = calcSevereCurrentlyInfected(data.reportedCases);
   const factor = calcFactor(data.periodType, data.timeToElapse);
+  const impactInfectionsByRequestedTime = calcInfections(currentlyInfected, factor);
+  const impactSCaseRequest = calcSevereCases(impactInfectionsByRequestedTime);
+  const severeImpactInfectionsByRequestedTime = calcInfections(severeCurrentlyInfected, factor);
+  const severeSCaseRequest = calcSevereCases(severeImpactInfectionsByRequestedTime);
+
   return {
     data,
     impact: {
       currentlyInfected,
-      infectionsByRequestedTime: calcInfections(currentlyInfected, factor)
+      infectionsByRequestedTime: impactInfectionsByRequestedTime,
+      severeCasesByRequestedTime: impactSCaseRequest,
+      hospitalBedsByRequestedTime: calcHospitalBeds(data.totalHospitalBeds,
+        impactSCaseRequest)
 
     },
     severeImpact: {
       currentlyInfected: severeCurrentlyInfected,
-      infectionsByRequestedTime: calcInfections(severeCurrentlyInfected, factor)
+      infectionsByRequestedTime: severeImpactInfectionsByRequestedTime,
+      severeCasesByRequestedTime: severeSCaseRequest,
+      hospitalBedsByRequestedTime: calcHospitalBeds(data.totalHospitalBeds,
+        severeSCaseRequest)
+
 
     }
   };
