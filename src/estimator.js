@@ -42,6 +42,9 @@ export const calcFactor = (periodType, timeToElapse) => {
 
 export const calcHospitalBeds = (totalHospitalBeds, severeCasesByRequestedTime) => {
   const availableBeds = 0.35 * totalHospitalBeds;
+  if ((availableBeds - severeCasesByRequestedTime) >= 0) {
+    return Math.trunc(availableBeds);
+  }
   return Math.trunc(availableBeds - severeCasesByRequestedTime);
 };
 
