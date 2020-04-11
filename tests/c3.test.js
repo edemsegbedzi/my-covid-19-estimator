@@ -10,5 +10,5 @@ test("should return 2250342",() => {
 })
 
 test("should return 12484899635.20",() => {
-    expect(calcDollarsInFlight(112517120,0.73,4,38)).toBe(12484899635)
+    expect(calcDollarsInFlight(112517120,0.73,4,38)).toBe(8646052)
 })

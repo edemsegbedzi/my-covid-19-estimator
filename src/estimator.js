@@ -11,7 +11,7 @@ export const calcIcuCare = (infections) => Math.trunc(0.05 * infections);
 
 export const calcVentilators = (infections) => Math.trunc(0.02 * infections);
 
-export const calcDollarsInFlight = (...params) => Math.trunc(params.reduce((i, e) => i * e));
+export const calcDollarsInFlight = (infections,avgDailyUSD,avgIncomePop,period) => Math.trunc((infections*avgDailyUSD*avgIncomePop)/period);
 
 const calcDays = (periodType, timeToElapse) => {
   switch (periodType) {
