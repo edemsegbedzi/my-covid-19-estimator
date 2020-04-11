@@ -23,7 +23,7 @@ const output = {
         hospitalBedsByRequestedTime : -16639962,
         casesForICUByRequestedTime : 5625856,
         casesForVentilatorsByRequestedTime : 2250342,
-        dollarsInFlight : Number(12484899635.20).toFixed(2)
+        dollarsInFlight : 12484899635
 
     },
     severeImpact : {
@@ -33,7 +33,7 @@ const output = {
         hospitalBedsByRequestedTime : -84150234,
         casesForICUByRequestedTime : 28129280,
         casesForVentilatorsByRequestedTime : 11251712,
-        dollarsInFlight : Number(62424498176.00).toFixed(2)
+        dollarsInFlight : 62424498176
 
     }
 }   

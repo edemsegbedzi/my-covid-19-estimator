@@ -11,7 +11,7 @@ export const calcIcuCare = (infections) => Math.trunc(0.05 * infections);
 
 export const calcVentilators = (infections) => Math.trunc(0.02 * infections);
 
-export const calcDollarsInFlight = (...params) => params.reduce((i, e) => i * e).toFixed(2);
+export const calcDollarsInFlight = (...params) => Math.trunc(params.reduce((i, e) => i * e));
 
 const calcDays = (periodType, timeToElapse) => {
   switch (periodType) {
@@ -42,9 +42,6 @@ export const calcFactor = (periodType, timeToElapse) => {
 
 export const calcHospitalBeds = (totalHospitalBeds, severeCasesByRequestedTime) => {
   const availableBeds = 0.35 * totalHospitalBeds;
-  // if ((availableBeds - severeCasesByRequestedTime) >= 0) {
-  //   return availableBeds;
-  // }
   return Math.trunc(availableBeds - severeCasesByRequestedTime);
 };
 
