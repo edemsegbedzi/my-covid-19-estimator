@@ -8,9 +8,6 @@
     "lint": "eslint ./src/",
     "test": "jest"
   },
-  "engines": {
-    "node": "12.16.1"
-  },
   "dependencies": {
     "on-covid-19": "^0.1.3"
   },
