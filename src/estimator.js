@@ -85,13 +85,8 @@ const covid19ImpactEstimator = (data) => {
       dollarsInFlight: calcDollarsInFlight(severeImpactInfectionsByRequestedTime,
         data.region.avgDailyIncomePopulation, data.region.avgDailyIncomeInUSD,
         days)
-
-
     }
   };
 };
 
 export default covid19ImpactEstimator;
-
-
-
