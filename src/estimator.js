@@ -58,7 +58,7 @@ const covid19ImpactEstimator = (data) => {
   const impactSCaseRequest = calcSevereCases(impactInfectionsByRequestedTime);
   const severeImpactInfectionsByRequestedTime = calcInfections(severeCurrentlyInfected, factor);
   const severeSCaseRequest = calcSevereCases(severeImpactInfectionsByRequestedTime);
-
+  console.log(data);
   return {
     data,
     impact: {
