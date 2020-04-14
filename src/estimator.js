@@ -59,6 +59,37 @@ const covid19ImpactEstimator = (data) => {
   const severeImpactInfectionsByRequestedTime = calcInfections(severeCurrentlyInfected, factor);
   const severeSCaseRequest = calcSevereCases(severeImpactInfectionsByRequestedTime);
 
+   console.log(data,{
+    data,
+    impact: {
+      currentlyInfected,
+      infectionsByRequestedTime: impactInfectionsByRequestedTime,
+      severeCasesByRequestedTime: impactSCaseRequest,
+      hospitalBedsByRequestedTime: calcHospitalBeds(data.totalHospitalBeds,
+        impactSCaseRequest),
+      casesForICUByRequestedTime: calcIcuCare(impactInfectionsByRequestedTime),
+      casesForVentilatorsByRequestedTime: calcVentilators(impactInfectionsByRequestedTime),
+      dollarsInFlight: calcDollarsInFlight(impactInfectionsByRequestedTime,
+        data.region.avgDailyIncomePopulation, data.region.avgDailyIncomeInUSD,
+        days)
+
+    },
+    severeImpact: {
+      currentlyInfected: severeCurrentlyInfected,
+      infectionsByRequestedTime: severeImpactInfectionsByRequestedTime,
+      severeCasesByRequestedTime: severeSCaseRequest,
+      hospitalBedsByRequestedTime: calcHospitalBeds(data.totalHospitalBeds,
+        severeSCaseRequest),
+      casesForICUByRequestedTime: calcIcuCare(severeImpactInfectionsByRequestedTime),
+      casesForVentilatorsByRequestedTime: calcVentilators(severeImpactInfectionsByRequestedTime),
+      dollarsInFlight: calcDollarsInFlight(severeImpactInfectionsByRequestedTime,
+        data.region.avgDailyIncomePopulation, data.region.avgDailyIncomeInUSD,
+        days)
+
+
+    }
+  })
+
   return {
     data,
     impact: {
