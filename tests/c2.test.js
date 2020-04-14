@@ -9,5 +9,5 @@ test("should returen 35", () => {
 })
 
 test("should return -15", () => {
-    expect(calcHospitalBeds(678874,16877568)).toBe(-16639962);
+    expect(calcHospitalBeds(150141,39552)).toBe(12997);
 })

@@ -43,9 +43,9 @@ export const calcFactor = (periodType, timeToElapse) => {
 
 export const calcHospitalBeds = (totalHospitalBeds, severeCasesByRequestedTime) => {
   const availableBeds = 0.35 * totalHospitalBeds;
-  if ((availableBeds - severeCasesByRequestedTime) >= 0) {
-    return Math.trunc(availableBeds);
-  }
+  // if ((availableBeds - severeCasesByRequestedTime) >= 0) {
+  //   return Math.trunc(availableBeds);
+  // }
   return Math.trunc(availableBeds - severeCasesByRequestedTime);
 };
 
@@ -58,7 +58,6 @@ const covid19ImpactEstimator = (data) => {
   const impactSCaseRequest = calcSevereCases(impactInfectionsByRequestedTime);
   const severeImpactInfectionsByRequestedTime = calcInfections(severeCurrentlyInfected, factor);
   const severeSCaseRequest = calcSevereCases(severeImpactInfectionsByRequestedTime);
-  console.log(data);
   return {
     data,
     impact: {
